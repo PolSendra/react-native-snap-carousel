@@ -644,7 +644,9 @@ export default class Carousel extends Component {
         const { onScrollEndDrag } = this.props;
 
         if (this._flatlist) {
-            this._onScrollEnd();
+            if (typeof this._onScrollEnd === 'function') {
+                this._onScrollEnd();
+            }
         }
 
         if (onScrollEndDrag) {
@@ -657,7 +659,9 @@ export default class Carousel extends Component {
         const { onMomentumScrollEnd } = this.props;
 
         if (this._flatlist) {
-            this._onScrollEnd();
+            if (typeof this._onScrollEnd === 'function') {
+                this._onScrollEnd();
+            }
         }
 
         if (onMomentumScrollEnd) {
